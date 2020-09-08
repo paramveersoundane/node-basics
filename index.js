@@ -1,8 +1,8 @@
-//var rect =require('./rectangle');
-var rect= {
-    perimeter:(x,y)=> 2*(x+y),
-    area: (x,y)=>x*y
-}
+var rect =require('./rectangle');
+// var rect= {
+//     perimeter:(x,y)=> 2*(x+y),
+//     area: (x,y)=>x*y
+// }
 
 function solveRectangle(l,b){
    if(l<=0 || b<=0){
