@@ -3,15 +3,22 @@ const http=require('http');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const { json } = require('body-parser');
-
+const dishRouter = require('./routes/dishRouter');
 
 
 const hostname='localhost';
 const port=4000;
 const app = express();
+
 app.use(morgan('dev')); // as this development version it will display additional info as require
 app.use(bodyParser.json());// this allows parse the body of req message to format in json
+
+app.use('/dishes',dishRouter); // this is how we mount the router
 // 1 param endpoint 2 param callback function
+
+// Delete this endpoint
+// =========START=======//
+/*
 app.all('/dishes',(req,res,next)=>{ // when req comes all the request(get,post etc) this code will execute by default first
     res.statusCode=200;
     res.setHeader('Content-type','text/plain');
@@ -35,7 +42,12 @@ app.put('/dishes', (req,res,next)=>{  // modification of res will be carried in 
 //dangerous operation for users -delete
 app.delete('/dishes', (req,res,next)=>{  // modification of res will be carried in here because of next
     res.end('Deleting all the details!');
-});
+});*/
+
+// Implement this endpoint later
+// =========END=======//
+
+/*
 // =========START=======//
 app.get('/dishes/:dishId',(req,res,next)=>{ // modification of res will be carried in here because of next
     res.end('Will send  the detail of the dish :' + req.params.dishId + " to you!");
@@ -57,6 +69,8 @@ app.delete('/dishes/:dishId', (req,res,next)=>{  // modification of res will be 
 });
 
 // ========END========//
+*/
+
 app.use(express.static(__dirname + '/public')); // this tells to serve up the static files from __dirname
 // this particular folder in the root folder of this project and inside the public folder.
 
