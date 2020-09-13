@@ -4,7 +4,8 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const { json } = require('body-parser');
 const dishRouter = require('./routes/dishRouter');
-
+const leaderRouter = require('./routes/leaderRouter');
+const promoRouter = require('./routes/promoRouter');
 
 const hostname='localhost';
 const port=4000;
@@ -14,6 +15,8 @@ app.use(morgan('dev')); // as this development version it will display additiona
 app.use(bodyParser.json());// this allows parse the body of req message to format in json
 
 app.use('/dishes',dishRouter); // this is how we mount the router
+app.use('/leaders',leaderRouter);// Assignment 1
+app.use('/promotions',promoRouter);// Assignment 1
 // 1 param endpoint 2 param callback function
 
 // Delete this endpoint
