@@ -1,3 +1,4 @@
+//this is the place where it begins
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -6,6 +7,9 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const dishRouter = require('./routes/dishRouter');
+const leaderRouter = require('./routes/leaderRouter');
+const promoRouter = require('./routes/promoRouter');
 
 var app = express();
 
@@ -21,6 +25,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/dishes',dishRouter); // this is how we mount the router
+app.use('/leaders',leaderRouter);
+app.use('/promotions',promoRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
