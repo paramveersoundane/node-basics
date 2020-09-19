@@ -1,0 +1,16 @@
+{
+  "name": "node-mongopromise",
+  "version": "1.0.0",
+  "description": "Node Mongo Promise and CallbackHell",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
+  },
+  "author": "Paramveer Soundane",
+  "license": "ISC",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "mongodb": "^3.0.10"
+  }
+}
