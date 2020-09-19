@@ -6,11 +6,10 @@ const connect= mongoose.connect(url);
 
 connect.then((db)=>{
     console.log("Connected currently to the server");
-    var newDish = new Dishes({
+   Dishes.create({  // create method takes new document as an argument which needs to be stored
         name:'Utthapazia',
         description:'The desc for test'
-    });
-    newDish.save()
+    })
     .then((dish)=>{
         console.log("Saving the dish:");
         console.log(dish);
